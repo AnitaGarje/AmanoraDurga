@@ -1,0 +1,24 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class="com.AmanoraDurga.Model.Admin.Unit " table="Unit">
+<id name="id">
+<generator class="identity"></generator>
+</id>
+<property name="code"> </property>
+<property name="basicUnitCost"> </property>
+<property name="totalUnitCost"> </property>
+<property name="totalUnitCharges"> </property>
+<property name="totalUnitTaxesCharge"> </property>
+<property name="floor"> </property>
+<property name="sector"> </property>
+<property name="tower"> </property>
+<property name="project"> </property>
+<one-to-one name="project" class="com.AmanoraDurga.Model.Admin.Project" cascade="all"></one-to-one>
+<one-to-one name="sector" class="com.AmanoraDurga.Model.Admin.Sector" cascade="all"></one-to-one>
+<one-to-one name="tower" class="com.AmanoraDurga.Model.Admin.Tower" cascade="all"></one-to-one>
+<one-to-one name="floor" class="com.AmanoraDurga.Model.Admin.Floor" cascade="all"></one-to-one>
+</class>
+</hibernate-mapping>
