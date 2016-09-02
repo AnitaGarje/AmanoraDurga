@@ -1,9 +1,17 @@
 package com.AmanoraDurga.Model.Admin;
 
-public class AreaType {
+public class AreaType implements java.io.Serializable {
 	private int id;
 	private String code;
 	private String description;
+	public AreaType(){}
+	
+	public AreaType(int id, String code, String description) {
+		//super();
+		this.id = id;
+		this.code = code;
+		this.description = description;
+	}
 	public String getDescription() {
 		return description;
 	}

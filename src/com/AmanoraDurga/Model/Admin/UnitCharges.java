@@ -5,6 +5,15 @@ public class UnitCharges {
 	private String code;
 	private String description;
 	private double chargesPerSqm;
+	public UnitCharges(){}
+	public UnitCharges(int id, String code, String description,
+			double chargesPerSqm) {
+		super();
+		this.id = id;
+		this.code = code;
+		this.description = description;
+		this.chargesPerSqm = chargesPerSqm;
+	}
 	public double getChargesPerSqm() {
 		return chargesPerSqm;
 	}

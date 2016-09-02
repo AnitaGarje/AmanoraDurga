@@ -5,11 +5,23 @@ import java.util.Set;//note that set is there is hibernate.mapping too but we ne
 
 
 
-public class Project {
+public class Project implements  java.io.Serializable {/// why  serializable?
 	private int id;
 	private String code;
 	private String description;
-	private Set<Sector> sectors = new HashSet<Sector>(0); //? why  n why set
+	private Set<Sector> sectors = new HashSet<Sector>(0); //? why  n why set--->one to many but didbn't understand the reason.
+	public Project()
+	{
+		
+	}
+	public Project(int id, String code, String description, Set<Sector> sectors) {
+		//super();
+		this.id = id;
+		this.code = code;
+		this.description = description;
+		this.sectors = sectors;
+	}
+	
 	public String getDescription() {
 		return description;
 	}

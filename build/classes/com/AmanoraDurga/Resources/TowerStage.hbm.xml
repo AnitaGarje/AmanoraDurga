@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+		<class name="com.AmanoraDurga.Model.Admin.TowerStage" table="TowerStage" catalog="AmanoraDurgaDb">
+			<id name="id" type="java.lang.Integer">
+			<column name="id"/>
+			<generator class="identity"/> <!--  // when to use <generator class="identity"></generator> and <generator class="identity"/> -->
+			</id>
+			<property name="code" type="string"> 
+				<column name="code" length="12" not-null="true" unique="true"/>
+			</property>
+			<property name="description" type="java.lang.String"> 
+				<column name="description" length="255" not-null="true"/>
+			</property>
+			<property name="status" > 
+				<column name="status" not-null="true"/>
+			</property>
+			<property name="startDate" type="date"> 
+				<column name="startDate" />
+			</property>
+			<property name="completiondate" type="date"> 
+				<column name="completiondate"/>
+			</property>
+			 <many-to-one name="Tower" column="tid" class="com.AmanoraDurga.Model.Admin.Tower" not-null="true"/>
+			 
+	</class>
+</hibernate-mapping>
+
+
+
+

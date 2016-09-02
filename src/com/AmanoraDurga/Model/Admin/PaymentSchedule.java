@@ -1,13 +1,22 @@
 package com.AmanoraDurga.Model.Admin;
 
-public class PaymentSchedule {
+public class PaymentSchedule  implements java.io.Serializable{
 
 	private int id;
 	private double paymentpercent;
 	private double payment;
-	private TowerStageCompletion towerstgcomp;
+	private TowerStage towerstage;
 	private Unit unit;
 	
+	public PaymentSchedule(int id, double paymentpercent, double payment,
+			TowerStage towerstage, Unit unit) {
+		super();
+		this.id = id;
+		this.paymentpercent = paymentpercent;
+		this.payment = payment;
+		this.towerstage = towerstage;
+		this.unit = unit;
+	}
 	public int getId() {
 		return id;
 	}
@@ -26,11 +35,11 @@ public class PaymentSchedule {
 	public void setPayment(double payment) {
 		this.payment = payment;
 	}
-	public TowerStageCompletion getTowerstgcomp() {
-		return towerstgcomp;
+	public TowerStage gettowerstage() {
+		return towerstage;
 	}
-	public void setTowerstgcomp(TowerStageCompletion towerstgcomp) {
-		this.towerstgcomp = towerstgcomp;
+	public void settowerstage(TowerStage towerstage) {
+		this.towerstage = towerstage;
 	}
 	public Unit getUnit() {
 		return unit;

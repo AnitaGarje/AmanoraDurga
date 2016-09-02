@@ -6,6 +6,15 @@ public class UnitChargeMap {
 	private Unit unit;
 	private UnitCharges unitcharges;
     private double	calculatedcharges;
+    public UnitChargeMap(){};
+	public UnitChargeMap(int id, Unit unit, UnitCharges unitcharges,
+			double calculatedcharges) {
+		//super();
+		this.id = id;
+		this.unit = unit;
+		this.unitcharges = unitcharges;
+		this.calculatedcharges = calculatedcharges;
+	}
 	public int getId() {
 		return id;
 	}

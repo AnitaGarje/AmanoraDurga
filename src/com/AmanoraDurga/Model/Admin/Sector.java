@@ -3,12 +3,33 @@ package com.AmanoraDurga.Model.Admin;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Sector {
+public class Sector implements java.io.Serializable{
 	private int id;
 	private String code;
 	private String description;
-	private Project project; 
 	private Set<Tower> towers = new HashSet<Tower>(0);
+	public Sector() //why?
+	{
+		
+	}
+	
+	public Sector(int id, String code, String description, Set<Tower> towers) {
+		super();
+		this.id = id;
+		this.code = code;
+		this.description = description;
+		this.towers = towers;
+	}
+
+	public Sector(int id, String code, String description, Project project,
+			Set<Tower> towers) {
+		//super(); why?
+		this.id = id;
+		this.code = code;
+		this.description = description;
+		this.towers = towers;
+	}
+	
 	public String getDescription() {
 		return description;
 	}
@@ -26,12 +47,6 @@ public class Sector {
 	}
 	public void setCode(String code) {
 		this.code = code;
-	}
-	public Project getProject() {
-		return project;
-	}
-	public void setProject(Project project) {
-		this.project = project;
 	}
 	public Set<Tower> getTowers() {
 		return towers;

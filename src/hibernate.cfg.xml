@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+<session-factory>
+<!-- DB Connection Setting -->
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/AmanoraDurgaDb?createDatabaseIfNotExist=true</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password"></property>
+    
+    <!--  JBDC Connection pool(use default) why?-->
+    
+    <!-- SQL Dialect why?-->
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    
+    <!-- Create DB tables -->
+    <property name="hibernate.hbm2ddl.auto">create</property>
+    
+    <!-- Show SQL queries on console -->
+    <property name="show_sql">true</property>
+    
+    <!--why? <property name="format_sql">true</property>-->
+    
+    <!-- Mapping files path using which we can create tables -->
+    <mapping resource="com/AmanoraDurga/Resources/project.hbm.xml" />
+    <!-- com.AmanoraDurga.Resources note that we need replace dot by slash -->
+    <mapping resource="com/AmanoraDurga/Resources/sector.hbm.xml" />
+    <mapping resource="com/AmanoraDurga/Resources/tower.hbm.xml" /> 
+    <mapping resource="com/AmanoraDurga/Resources/floor.hbm.xml" />
+    <mapping resource="com/AmanoraDurga/Resources/unit.hbm.xml" />
+    <mapping resource="com/AmanoraDurga/Resources/FlatType.hbm.xml" />
+    <mapping resource="com/AmanoraDurga/Resources/AreaType.hbm.xml" />
+    <mapping resource="com/AmanoraDurga/Resources/UnitTypeArea.hbm.xml" />
+    <mapping resource="com/AmanoraDurga/Resources/TowerStage.hbm.xml" />
+    <mapping resource="com/AmanoraDurga/Resources/PaymentSchedule.hbm.xml" />
+</session-factory>
+</hibernate-configuration>

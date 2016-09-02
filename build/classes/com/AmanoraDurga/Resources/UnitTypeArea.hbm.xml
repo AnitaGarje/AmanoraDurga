@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+		<class name="com.AmanoraDurga.Model.Admin.UnitTypeArea" table="UnitTypeArea" catalog="AmanoraDurgaDb">
+			<id name="id" type="java.lang.Integer">
+			<column name="id"/>
+			<generator class="identity"/> <!--  // when to use <generator class="identity"></generator> and <generator class="identity"/> -->
+			</id>
+			<property name="area" type="java.lang.Float"> 
+				<column name="area" precision="12"/>
+			</property>
+			 <many-to-one name="flatType" column="FlatTypeid" class="com.AmanoraDurga.Model.Admin.FlatType" not-null="true"/>
+			 <many-to-one name="areatype" column="AreaTypeid" class="com.AmanoraDurga.Model.Admin.AreaType" not-null="true"/>
+		</class>
+</hibernate-mapping>
+

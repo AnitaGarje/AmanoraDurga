@@ -1,10 +1,21 @@
 package com.AmanoraDurga.Model.Admin;
 
-public class FlatType {
+public class FlatType implements java.io.Serializable {
 
 	private int id;
 	private String code;
 	private String type;
+	
+	public FlatType()
+	{
+		
+	}
+	public FlatType(int id, String code, String type) {
+		//super();
+		this.id = id;
+		this.code = code;
+		this.type = type;
+	}
 	public int getId() {
 		return id;
 	}

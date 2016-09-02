@@ -1,10 +1,24 @@
 package com.AmanoraDurga.Model.Admin;
 
-public class Tower {
+import java.util.HashSet;
+import java.util.Set;
+
+public class Tower implements java.io.Serializable{
 		private int id;
 		private String code;
-		private String description;
-		private Sector sector; 
+		private String description; 
+		private Set<Floor> floors=new HashSet<Floor>(0);
+		public Tower()
+		{
+			
+		}
+		public Tower(int id, String code, String description, Set<Floor> floors) {
+			super();
+			this.id = id;
+			this.code = code;
+			this.description = description;
+			this.floors = floors;
+		}
 		public String getDescription() {
 			return description;
 		}
@@ -24,12 +38,15 @@ public class Tower {
 			this.code = code;
 		}
 		
-		public Sector getSector() {
-			return sector;
+		public Set<Floor> getFloors() {
+			return floors;
 		}
-		public void setSector(Sector sector) {
-			this.sector = sector;
+
+		public void setFloors(Set<Floor> floors) {
+			this.floors = floors;
 		}
+
+		
 
 
 	

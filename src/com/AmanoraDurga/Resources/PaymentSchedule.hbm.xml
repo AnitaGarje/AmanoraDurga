@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+		<class name="com.AmanoraDurga.Model.Admin.PaymentSchedule" table="PaymentSchedule" catalog="AmanoraDurgaDb">
+			<id name="id" type="java.lang.Integer">
+			<column name="id"/>
+			<generator class="identity"/> <!--  // when to use <generator class="identity"></generator> and <generator class="identity"/> -->
+			</id>
+			<property name="paymentpercent" type="java.lang.Float"> 
+				<column name="paymentpercent" precision="12" not-null="true"/>
+			</property>
+			<property name="payment" type="java.lang.Float"> 
+				<column name="payment" precision="12" not-null="true"/>
+			</property>
+			 <many-to-one name="towerstage" column="tsid" class="com.AmanoraDurga.Model.Admin.TowerStage" not-null="true"/>
+			 <many-to-one name="Unit" column="uid" class="com.AmanoraDurga.Model.Admin.Unit" not-null="true"/>
+			
+	</class>
+</hibernate-mapping>
+
+
+
+
